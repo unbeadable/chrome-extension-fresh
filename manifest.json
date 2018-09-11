@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "unbeadable.",
-  "description": "Easily check if the products you are buying from amazon contain microplastics.",
+  "description": "Easily check if the products you are buying from Amazon contain microplastics.",
   "version": "2",
-  "author": "unbeadables",
+  "author": "unbeadable",
   "content_scripts": [
     {
       "matches": [

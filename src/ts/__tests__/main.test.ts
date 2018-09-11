@@ -2,13 +2,11 @@ import {render} from '../main';
 
 describe('main', () => {
     const hostDivId = "zeitgeistBadge_feature_div";
+    const hostDivHtml: String = `<div id="${hostDivId}"></div>`;
+    const asinInfo = '<table><tr><td class="label">ASIN</td><td class="value">B001LQCCDK</td></tr></table>';
 
-    it('should inject HTML when page has ASIN', async () => {
-        document.body.innerHTML =
-            `<div id='${hostDivId}'></div>` +
-            '<table>' +
-            '<tr><td class="label">ASIN</td><td class="value">B001LQCCDK</td></tr>' +
-            '</table>';
+    it('should attach badge to target host div when page has ASIN info', async () => {
+        document.body.innerHTML = hostDivHtml + asinInfo;
 
         render();
 
@@ -16,12 +14,8 @@ describe('main', () => {
         expect(hostDiv.innerHTML).toBe("<div id=\"badge\"></div>");
     });
 
-    it('should keep HTML as is when page does not have an ASIN', async () => {
-        document.body.innerHTML =
-            `<div id='${hostDivId}'></div>` +
-            '<table>' +
-            '<tr><td class="label">NOT AN ASIN</td><td class="value">B001LQCCDK</td></tr>' +
-            '</table>';
+    it('should keep HTML as is when page does not have ASIN info', async () => {
+        document.body.innerHTML = hostDivHtml;
 
         render();
 
