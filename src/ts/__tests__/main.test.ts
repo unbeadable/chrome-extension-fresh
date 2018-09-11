@@ -11,7 +11,7 @@ describe('main', () => {
         render();
 
         const hostDiv: HTMLElement = document.getElementById(hostDivId);
-        expect(hostDiv.innerHTML).toBe("<div id=\"badge\"></div>");
+        expect(hostDiv.innerHTML).toMatchSnapshot();
     });
 
     it('should keep HTML as is when page does not have ASIN info', async () => {
@@ -20,6 +20,6 @@ describe('main', () => {
         render();
 
         const hostDiv: HTMLElement = document.getElementById(hostDivId);
-        expect(hostDiv.innerHTML).toBe("");
+        expect(hostDiv.innerHTML).toMatchSnapshot();
     });
 });
