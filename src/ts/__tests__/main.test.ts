@@ -1,9 +1,10 @@
-import {render} from '../main';
+import { render } from '../main';
 
 describe('main', () => {
-    const hostDivId = "zeitgeistBadge_feature_div";
+    const hostDivId = 'zeitgeistBadge_feature_div';
     const hostDivHtml: String = `<div id="${hostDivId}"></div>`;
-    const asinInfo = '<table><tr><td class="label">ASIN</td><td class="value">B001LQCCDK</td></tr></table>';
+    const asinInfo =
+        '<table><tr><td class="label">ASIN</td><td class="value">B001LQCCDK</td></tr></table>';
 
     it('should attach badge to target host div when page has ASIN info', async () => {
         document.body.innerHTML = hostDivHtml + asinInfo;

@@ -1,9 +1,10 @@
-import {BadgeIcon} from './BadgeIcon';
+import { BadgeIcon } from './BadgeIcon';
 
 const badgeText: () => HTMLElement = () => {
     const element = document.createElement('span');
     element.setAttribute('class', 'unbdbl-primary-text');
-    element.innerText = 'This product contributes to the pollution of our oceans.';
+    element.innerText =
+        'This product contributes to the pollution of our oceans.';
     return element;
 };
 
